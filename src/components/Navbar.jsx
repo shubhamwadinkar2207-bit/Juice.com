@@ -45,7 +45,7 @@ const Navbar = () => {
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-menu">
           <a href="#products" style={{ fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }}>Products</a>
           <a href="#about" style={{ fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }}>Our Story</a>
-          <a href="#contact" style={{ fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }}>Contact</a>
+
           <button onClick={() => setIsCartOpen(true)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', marginLeft: '1rem', position: 'relative' }}>
             <ShoppingBag size={20} strokeWidth={1.5} />
             {cartItemCount > 0 && (

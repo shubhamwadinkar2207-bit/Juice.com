@@ -49,14 +49,24 @@ const Footer = () => {
               <li><a href="#" style={{ color: 'var(--text-muted)' }}>Our Story</a></li>
               <li><a href="#" style={{ color: 'var(--text-muted)' }}>Zero Mislead Policy</a></li>
               <li><a href="#" style={{ color: 'var(--text-muted)' }}>Sustainability</a></li>
-              <li><a href="#" style={{ color: 'var(--text-muted)' }}>Contact Us</a></li>
+            </ul>
+          </div>
+          </Reveal>
+
+          <Reveal delay={0.3}>
+          <div>
+            <h4 style={{ fontSize: '1.1rem', marginBottom: '1.5rem' }}>Contact</h4>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', color: 'var(--text-muted)' }}>
+              <li>Email: hello@juicewala.com</li>
+              <li>Phone: +91 98765 43210</li>
+              <li>Address: 123 Fresh Lane, Mumbai</li>
             </ul>
           </div>
           </Reveal>
 
         </div>
 
-        <Reveal delay={0.3}>
+        <Reveal delay={0.4}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', paddingTop: '2rem', borderTop: '1px solid var(--border-color)', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
           <p>&copy; {new Date().getFullYear()} Juicewala. All rights reserved.</p>
           <div style={{ display: 'flex', gap: '2rem' }}>

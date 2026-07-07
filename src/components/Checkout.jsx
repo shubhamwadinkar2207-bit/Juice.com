@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { Reveal } from './Reveal';
 import { FaPaypal, FaApple } from 'react-icons/fa';
@@ -30,6 +30,10 @@ const Input = ({ id, label, ...props }) => (
 const Checkout = ({ onComplete, onCancel }) => {
   const { cartItems } = useCart();
   const [step, setStep] = useState(1);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   // Extract the numeric value from price string like "₹89 / bottle"
   const getNumericPrice = (priceStr) => {
