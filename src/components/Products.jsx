@@ -206,15 +206,16 @@ const Products = () => {
           padding: 0.9rem 1.5rem;
           border-radius: 100px;
           font-weight: 600;
-          border: 1px solid var(--border-color);
-          background: transparent;
-          color: var(--text-color);
+          border: none;
+          background: #ff8a00;
+          color: white;
           transition: all 0.3s ease;
         }
         
         .product-btn:hover {
-          border-color: var(--text-color);
-          box-shadow: inset 0 0 0 1px var(--text-color);
+          background: #e67a00;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(255, 138, 0, 0.3);
         }
       `}</style>
     </section>
