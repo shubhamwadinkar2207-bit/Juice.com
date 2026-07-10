@@ -71,7 +71,31 @@ const Checkout = ({ onComplete, onCancel }) => {
                   <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Delivery Details</h2>
                   <p style={{ color: 'var(--text-muted)' }}>Where should we send your fresh juice?</p>
                 </div>
-                
+                {/* Order Summary */}
+                <div style={{ marginBottom: '2rem', background: 'var(--secondary-bg)', padding: '1.5rem', borderRadius: '16px' }}>
+                  <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', fontWeight: 600 }}>Order Summary</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    {cartItems.map(item => (
+                      <div key={item.id} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <div style={{ width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', background: item.color ? item.color + '15' : 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem' }}>
+                           <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                        </div>
+                        <div style={{ flex: 1 }}>
+                          <h4 style={{ fontSize: '1rem', fontWeight: 600, margin: 0 }}>{item.name}</h4>
+                          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: '0.2rem 0 0 0' }}>Qty: {item.quantity}</p>
+                        </div>
+                        <div style={{ fontWeight: 600 }}>
+                          ₹{getNumericPrice(item.price) * item.quantity}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontWeight: 600 }}>Total Amount</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent-color)' }}>₹{totalAmount}</span>
+                  </div>
+                </div>
+
                 <form onSubmit={handleDeliverySubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <Input id="name" label="Customer Name" placeholder="Enter your full name" required />
                   <Input id="email" type="email" label="Email ID" placeholder="you@example.com" required />

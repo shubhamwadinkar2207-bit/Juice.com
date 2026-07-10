@@ -77,7 +77,7 @@ const ProductCard = ({ product, index, onOpen }) => {
 const Products = () => {
   const containerRef = useRef(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const { addToCart, setIsCheckout } = useCart();
+  const { addToCart, setIsCheckout, cartItems } = useCart();
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -173,10 +173,9 @@ const Products = () => {
                       className="btn btn-secondary modal-btn-add" 
                       onClick={() => {
                         addToCart(selectedProduct);
-                        setSelectedProduct(null);
                       }}
                     >
-                      Add to Cart
+                      Add to Cart {cartItems.find(item => item.id === selectedProduct.id)?.quantity > 0 ? `(${cartItems.find(item => item.id === selectedProduct.id).quantity})` : ''}
                     </button>
                   </div>
                 </div>
