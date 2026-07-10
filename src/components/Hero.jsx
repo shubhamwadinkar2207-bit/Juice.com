@@ -84,21 +84,20 @@ const Hero = () => {
               marginBottom: '1.5rem', color: 'var(--accent-color)'
             }}
           >
-            100% Natural & Organic
+            Cold-pressed. No sugar. No shortcuts.
           </motion.div>
           
           <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', marginBottom: '1.5rem' }}>
-            Nature in <br/>
-            <span style={{ color: 'var(--accent-color)' }}>every drop.</span>
+            Real fruit. <br/>
+            <span style={{ color: 'var(--accent-color)' }}>No fine print.</span>
           </h1>
           
-          <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', maxWidth: '500px', marginBottom: '2.5rem' }}>
-            Zero mislead. Just pure, organic fruits pressed into the most refreshing juices and pulps. Experience the authentic taste of nature.
+          <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', maxWidth: '500px', marginBottom: '2.5rem', lineHeight: 1.6 }}>
+            Mango straight off the tree. Strawberries at peak ripeness. Berries that actually taste like berries. No added sugar, no concentrate, no ingredients you can't pronounce — just fruit, pressed and bottled the same day.
           </p>
           
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <button className="btn btn-primary">Shop Juices</button>
-            <button className="btn btn-secondary">Explore Pulps</button>
+            <button className="btn btn-primary" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>Shop the range</button>
           </div>
         </motion.div>
 

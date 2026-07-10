@@ -7,6 +7,7 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCheckout, setIsCheckout] = useState(false);
 
   const addToCart = (product) => {
     setCartItems(prevItems => {
@@ -43,6 +44,8 @@ export const CartProvider = ({ children }) => {
       cartItems,
       isCartOpen,
       setIsCartOpen,
+      isCheckout,
+      setIsCheckout,
       addToCart,
       removeFromCart,
       updateQuantity,

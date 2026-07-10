@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Products from './components/Products';
@@ -10,14 +10,13 @@ import Checkout from './components/Checkout';
 import { CartProvider, useCart } from './context/CartContext';
 
 function AppContent() {
-  const [isCheckout, setIsCheckout] = useState(false);
-  const { clearCart, cartItems } = useCart();
+  const { clearCart, cartItems, isCheckout, setIsCheckout } = useCart();
 
   useEffect(() => {
     if (isCheckout && cartItems.length === 0) {
       setIsCheckout(false);
     }
-  }, [cartItems.length, isCheckout]);
+  }, [cartItems.length, isCheckout, setIsCheckout]);
 
   return (
     <div className="app-container">
